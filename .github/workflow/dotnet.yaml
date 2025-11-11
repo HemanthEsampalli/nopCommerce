@@ -12,7 +12,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.100'
+      - name: sonar cloud scan
+        uses: sonar source /sonar cloud -github-actions@v6
+        with:
+          args: >
+             -Dsonar.organization=sravanthi569
+             -Dsonar.projectKey=Sravathi569_nopCommerce
+        env:
+              mysonar: ${{ secrets. sonar_token }}
+              mysonar_url: ${{ secrets.https://sonarcloud.io }}
       - name: Publish project
         run: dotnet publish -c release src/Presentation/Nop.Web/Nop.Web.csproj -o develop
 
+  
+      
