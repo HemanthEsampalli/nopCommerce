@@ -23,7 +23,7 @@ jobs:
              -Dsonar.organization=noporg
              -Dsonar.projectKey=noporg_hemanth
         env:
-              mysonar: ${{ secrets. sonar_token }}
+              mysonar: ${{ secrets.SONAR_TOKEN }}
               mysonar_url: ${{ secrets.https://sonarcloud.io }}
       - name: Publish project
         run: dotnet publish -c release src/Presentation/Nop.Web/Nop.Web.csproj -o develop
