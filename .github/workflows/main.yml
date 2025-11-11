@@ -16,8 +16,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.100'
-      - name: sonar cloud scan
-        uses: sonar source /sonar cloud -github-actions@v6
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v6
+
         with:
           args: >
              -Dsonar.organization=noporg
@@ -27,3 +28,5 @@ jobs:
               mysonar_url: https://sonarcloud.io
       - name: Publish project
         run: dotnet publish -c release src/Presentation/Nop.Web/Nop.Web.csproj -o develop
+
+
