@@ -7,7 +7,7 @@ on:
 
 jobs:
   dotnet-publish:
-    runs-on: 'self-hosted'
+    runs-on: 'ubuntu-latest'
 
     steps:
       - name: Checkout repository
@@ -20,8 +20,8 @@ jobs:
         uses: sonar source /sonar cloud -github-actions@v6
         with:
           args: >
-             -Dsonar.organization=sravanthi569
-             -Dsonar.projectKey=Sravathi569_nopCommerce
+             -Dsonar.organization=noporg
+             -Dsonar.projectKey=noporg_hemanth
         env:
               mysonar: ${{ secrets. sonar_token }}
               mysonar_url: ${{ secrets.https://sonarcloud.io }}
