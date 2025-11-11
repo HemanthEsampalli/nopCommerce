@@ -17,7 +17,7 @@ jobs:
         with:
           dotnet-version: '9.0.100'
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud -github-actions@v6
+        uses: SonarSource/sonarcloud-github-actions@v6
         with:
           args: >
              -Dsonar.organization=noporg
