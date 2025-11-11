@@ -44,7 +44,7 @@ jobs:
           ECR_REPOSITORY: ecr/nop
           IMAGE_TAG: latest
         run: |
-         docker build -t dev/nop .
+         docker build -t ecr/nop .
           docker tag ecr/nop:latest 503427799577.dkr.ecr.us-east-2.amazonaws.com/ecr/nop:latest
           docker push 503427799577.dkr.ecr.us-east-2.amazonaws.com/ecr/nop:latest
 
