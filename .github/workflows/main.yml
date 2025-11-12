@@ -47,15 +47,15 @@ jobs:
           docker build -t ecr/nop .
           docker tag ecr/nop:latest 503427799577.dkr.ecr.us-east-2.amazonaws.com/ecr/nop:latest
           docker push 503427799577.dkr.ecr.us-east-2.amazonaws.com/ecr/nop:latest
-          
 
-      # - name: Scan image with Trivy
-      #   uses: aquasecurity/trivy-action@0.20.0
-      #   with:
-      #   image-ref: 'dev/nop:latest'
-      #   format: 'table'
-      #   severity: 'HIGH,CRITICAL'
-      #   ignore-unfixed: true
+
+      - name: Scan image with Trivy
+        uses: aquasecurity/trivy-action@0.20.0
+        with:
+          image-ref: 'dev/nop:latest'
+          format: 'table'
+          severity: 'HIGH,CRITICAL'
+          ignore-unfixed: true
       # - name: Update kubeconfig for EKS
       #   run: aws eks update-kubeconfig --name my-cluster --region ap-south-1
 
